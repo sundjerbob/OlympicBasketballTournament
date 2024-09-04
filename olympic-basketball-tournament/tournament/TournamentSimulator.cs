@@ -37,60 +37,77 @@ namespace OlympicBasketballTournament
             }
         }
 
+        
 
         public static MatchResult SimulateMatch(Team team1, Team team2)
         {
-            float oddsTeam1 = team1.Form;
-            float oddsTeam2 = team2.Form;
+           float oddsTeam1 = team1.Form;
+           float oddsTeam2 = team2.Form;
 
-            // Adjust odds based on relative form difference
-            float formDifference = (team1.Form - team2.Form) * 0.1f;
-            oddsTeam1 += formDifference;
-            oddsTeam2 -= formDifference;
+           // Adjust odds based on relative form difference
+           float formDifference = (team1.Form - team2.Form) * 0.1f;
+           oddsTeam1 += formDifference;
+           oddsTeam2 -= formDifference;
 
-            Random random = new Random();
+           Random random = new Random();
 
-            // Calculate forfeit probabilities based on form
-            float forfeitProbability1 = (1 - oddsTeam1) * 0.005f;
-            float forfeitProbability2 = (1 - oddsTeam2) * 0.005f;
+           // Calculate forfeit probabilities based on form
+           float forfeitProbability1 = (1 - oddsTeam1) * 0.005f;
+           float forfeitProbability2 = (1 - oddsTeam2) * 0.005f;
 
-            // Check if team1 forfeits
-            if (random.NextDouble() < forfeitProbability1)
-            {
-                return new MatchResult
-                {
-                    Team1 = team1,
-                    Team2 = team2,
-                    Team1Score = -1, // Indicate team1 forfeits
-                    Team2Score = 0 // Team2 wins by forfeit
-                };
-            }
+           // Check if team1 forfeits
+           if (random.NextDouble() < forfeitProbability1)
+           {
+               return new MatchResult
+               {
+                   Team1 = team1,
+                   Team2 = team2,
+                   Team1Score = -1, // Indicate team1 forfeits
+                   Team2Score = 0 // Team2 wins by forfeit
+               };
+           }
 
-            // Check if team2 forfeits
-            if (random.NextDouble() < forfeitProbability2)
-            {
-                return new MatchResult
-                {
-                    Team1 = team1,
-                    Team2 = team2,
-                    Team1Score = 0, // Team1 wins by forfeit
-                    Team2Score = -1 // Indicate team2 forfeits
-                };
-            }
+           // Check if team2 forfeits
+           if (random.NextDouble() < forfeitProbability2)
+           {
+               return new MatchResult
+               {
+                   Team1 = team1,
+                   Team2 = team2,
+                   Team1Score = 0, // Team1 wins by forfeit
+                   Team2Score = -1 // Indicate team2 forfeits
+               };
+           }
 
-            // Simulate regular match if no one forfeits
-            int score1 = Math.Clamp((int)(random.Next(70, 100) * (1 + oddsTeam1)), 70, 120);
-            int score2 = Math.Clamp((int)(random.Next(70, 100) * (1 + oddsTeam2)), 70, 120);
+           // Simulate regular match if no one forfeits
+           int score1 = Math.Clamp((int)(random.Next(70, 100) * (1 + oddsTeam1)), 70, 120);
+           int score2 = Math.Clamp((int)(random.Next(70, 100) * (1 + oddsTeam2)), 70, 120);
 
-            return new MatchResult
-            {
-                Team1 = team1,
-                Team2 = team2,
-                Team1Score = score1,
-                Team2Score = score2
-            };
-        }
+           // Ensure no draw using odds
+           if (score1 == score2)
+           {
+               // Favor the team with higher odds
+               float totalOdds = oddsTeam1 + oddsTeam2;
+               float oddsThreshold = oddsTeam1 / totalOdds; // Ratio of oddsTeam1 to total odds
 
+               if (random.NextDouble() < oddsThreshold)
+               {
+                   score1 += 1; // Team1 wins
+               }
+               else
+               {
+                   score2 += 1; // Team2 wins
+               }
+           }
+
+           return new MatchResult
+           {
+               Team1 = team1,
+               Team2 = team2,
+               Team1Score = score1,
+               Team2Score = score2
+           };
+       }
 
 
 
