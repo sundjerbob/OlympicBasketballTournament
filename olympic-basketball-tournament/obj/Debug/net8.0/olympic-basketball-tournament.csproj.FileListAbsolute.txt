@@ -1,0 +1,14 @@
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\bin\Debug\net8.0\olympic-basketball-tournament.exe
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\bin\Debug\net8.0\olympic-basketball-tournament.deps.json
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\bin\Debug\net8.0\olympic-basketball-tournament.runtimeconfig.json
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\bin\Debug\net8.0\olympic-basketball-tournament.dll
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\bin\Debug\net8.0\olympic-basketball-tournament.pdb
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.AssemblyInfoInputs.cache
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.AssemblyInfo.cs
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.csproj.CoreCompileInputs.cache
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.dll
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\refint\olympic-basketball-tournament.dll
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.pdb
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\olympic-basketball-tournament.genruntimeconfig.cache
+C:\Users\Tadija\code-behind-praksa\olympic-basketball-tournament\obj\Debug\net8.0\ref\olympic-basketball-tournament.dll
